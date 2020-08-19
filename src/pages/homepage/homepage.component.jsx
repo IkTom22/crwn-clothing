@@ -5,7 +5,7 @@ import './homepage.styles.scss';
 // no state or lifesycle methods so just function base component
 const HomePage = ()=>(
    <div className='homepage'>
-        <Directory />
+        <Directory  />
    </div>
 )
 export default HomePage;
