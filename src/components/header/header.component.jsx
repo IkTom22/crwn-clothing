@@ -1,4 +1,7 @@
 import React from 'react';
+import { createStructuredSelector } from 'reselect';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
+import { selectCurrentUser }from '../../redux/user/user.selectors';
 import { Link } from 'react-router-dom';
 import { connect }from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
@@ -35,8 +38,12 @@ const Header = ({ currentUser, hidden }) => (
 )
 
 // this naming can be anything but mapStateToProps is standard with redux codebase
-const mapStateToProps = ({user: {currentUser}, cart: {hidden}}, ) => ({
-    currentUser,
-    hidden
+// const mapStateToProps = (state) => ({
+//     currentUser: selectCurrentUser(state),
+//     hidden: selectCartItems(state)
+// })
+const mapStateToProps =createStructuredSelector ({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden
 })
 export default connect(mapStateToProps)(Header);
