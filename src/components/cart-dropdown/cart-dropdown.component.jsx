@@ -24,9 +24,12 @@ import './cart-dropdown.styles.scss';
             }
             </div>
             <CustomButton onClick={()=>{
-                history.push('./checkout');
+                history.push('/checkout');
                 dispatch(toggleCartHidden());
-            }}> GO TO CHECKOUT</CustomButton>
+                }}
+            > 
+                GO TO CHECKOUT
+            </CustomButton>
         
         </div>
     )
