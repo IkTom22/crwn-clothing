@@ -17,6 +17,7 @@ import { selectCurrentUser } from './redux/user/user.selectors'
 class App extends React.Component {
  
   unsubscribeFromAuth = null
+
   componentDidMount(){
     const {setCurrentUser} = this.props;
 
@@ -35,7 +36,8 @@ class App extends React.Component {
       }
       
       setCurrentUser(userAuth );
-      
+      //addCollectionAndDocuments('collections', collectionsArray.map(({ title, items }) =>({ title, items })));
+      //addCollectionAndDocuments('collections', collectionsArray);
     })
   }
   componentWillUnmount(){
