@@ -20,15 +20,15 @@ export const fetchCollectionsFailure = errorMessage => ({
     type: ShopActionTypes.FETCH_COLLECTIONS_FAILURE,
     payload: errorMessage
 }) 
-export const fetchCollectionsStatrtAsync = () =>{
-    return dispatch =>{
-        const collectionRef = firestore.collection('collections');
-        dispatch(fetchCollectionsStart());
-        collectionRef.get().then(snapshot => {
-            const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-            dispatch(fetchCollectionsSuccsess(collectionsMap));
-            //this.setState({ loading: false});
-        }).catch(error => dispatch(fetchCollectionsFailure(error.message)));
-    }
-}
+// export const fetchCollectionsStartAsync = () =>{
+//     return dispatch =>{
+//         const collectionRef = firestore.collection('collections');
+//         dispatch(fetchCollectionsStart());
+//         collectionRef.get().then(snapshot => {
+//             const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+//             dispatch(fetchCollectionsSuccsess(collectionsMap));
+//             //this.setState({ loading: false});
+//         }).catch(error => dispatch(fetchCollectionsFailure(error.message)));
+//     }
+// }
 
